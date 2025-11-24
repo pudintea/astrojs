@@ -1,0 +1,63 @@
+shadcn-ui di ASTRO
+===================
+
+Install shadcn-ui CLI
+> npm install -D shadcn-ui
+
+Tambahkan bagian "paths" seperti ini:
+tsconfig.json :
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"]
+}
+
+
+Inisialisasi shadcn-ui
+> npx shadcn@latest init
+
+
+Setelah init sukses
+Kamu sudah bisa menambah komponen seperti:
+=======================================================
+Tambah Button:
+> npx shadcn add button
+
+Tambah Card:
+> npx shadcn add card
+
+Tambah Input + Label:
+> npx shadcn add input
+> npx shadcn add label
+
+Tambah Sheet (untuk sidebar slide):
+> npx shadcn add sheet
+
+Tambah Navigation Menu (navbar):
+> npx shadcn add navigation-menu
+
+Semua komponen akan masuk ke:
+src/components/ui/
+
+Semua berformat .astro, bukan React.
+
+===============================================
+> npx shadcn add button
+> npx shadcn add card
+> npx shadcn add input
+> npx shadcn add label
+> npx shadcn add sheet
+> npx shadcn add navigation-menu
+
+
+
+
+
+
+// PUDIN SAEPUDIN
