@@ -54,6 +54,84 @@ import "../styles/global.css";
 </h1>
 
 
+INSTALL TAILWINDCSS 3
+=================================
+Jalankan:
+> npm install -D tailwindcss@3 postcss autoprefixer @astrojs/tailwind
+
+Atau agar versi exact:
+> npm install -D tailwindcss@3.4.14 postcss autoprefixer @astrojs/tailwind
+
+(3.4.14 adalah versi stabil terakhir Tailwind v3.)
+
+
+Tambahkan integrasi Tailwind ke astro.config.mjs
+================================================
+Buka astro.config.mjs:
+
+import { defineConfig } from 'astro/config';
+import tailwind from "@astrojs/tailwind";
+
+export default defineConfig({
+  integrations: [
+    tailwind({
+      config: {
+        applyBaseStyles: true,
+      },
+    }),
+  ],
+});
+
+Inisialisasi file konfigurasi Tailwind (v3)
+===============================================
+> npx tailwindcss init -p
+
+Ini akan membuat:
+- tailwind.config.js
+- postcss.config.js
+
+
+Atur tailwind.config.js
+=========================
+Pastikan content berisi folder Astro:
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
+Tambahkan Tailwind ke file CSS utama
+=========================================
+Misalnya pada src/styles/global.css:
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+Lalu import di layout atau entry point:
+
+<link rel="stylesheet" href="/src/styles/global.css" />
+
+Atau jika memakai src/pages/_app.astro:
+
+<style global>
+  @import "./src/styles/global.css";
+</style>
+
+dan paek seperti ini juga bisa di halaman layout utama
+---
+import "../styles/global.css";
+---
+
+
+
 
 
 
