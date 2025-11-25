@@ -1,0 +1,35 @@
+
+
+https://themesberg.github.io/flowbite-astro-admin-dashboard/
+
+CLONING :
+> git clone https://github.com/themesberg/flowbite-astro-admin-dashboard.git
+
+Development
+⚙️ Workflow
+This product is built using the following widely used technologies:
+
+Tailwind CSS: tailwindcss.com
+Flowbite: flowbite.com
+Astro: astro.build
+🚀 Quick start
+Clone this repository or download the ZIP file
+Make sure that you have Node.js and NPM, PNPM or Yarn installed
+Install the project dependencies from the package.json file:
+> pnpm install
+# or
+> npm install
+# or
+> yarn
+
+PNPM is the package manager of choice for illustration, but you can use what you want.
+Launch the Astro local development server on localhost:2121 by running the following command:
+> pnpm run dev
+You can also build the project and get the distribution files inside the dist/ folder by running:
+> pnpm run build
+Then, you can preview the generated build with a local web server:
+> pnpm run preview
+
+
+
+===== PUDIN SAEPUDIN
