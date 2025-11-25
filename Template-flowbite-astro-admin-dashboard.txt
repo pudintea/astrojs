@@ -31,5 +31,65 @@ Then, you can preview the generated build with a local web server:
 > pnpm run preview
 
 
+================================================================================================================
+
+> npm create astro@latest astro-admin
+
+Langkah selanjutnya (wajib untuk Flowbite)
+==========================================
+Setelah ini, masuk ke folder proyek:
+> cd astro-admin
+
+1. Install Tailwind CSS
+> npx astro add tailwind
+
+2. Install Flowbite + Flowbite-Astro
+> npm install flowbite flowbite-astro
+
+3. Konfigurasi Tailwind (tailwind.config.mjs)
+Tambahkan:
+
+import flowbite from 'flowbite/plugin';
+
+export default {
+  content: [
+    "./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}",
+    "node_modules/flowbite/**/*.js",
+    "node_modules/flowbite-astro/**/*.astro"
+  ],
+  plugins: [
+    flowbite,
+  ],
+};
+
+4. Tambahkan Flowbite-Astro ke astro.config.mjs
+import { defineConfig } from 'astro/config';
+import tailwind from "@astrojs/tailwind";
+import flowbite from "flowbite-astro";
+
+export default defineConfig({
+  integrations: [
+    tailwind(),
+    flowbite(),   // Tambahkan ini
+  ],
+});
+
+5. Coba komponen di halaman index
+Buat/ubah src/pages/index.astro:
+
+---
+import { Button } from "flowbite-astro";
+---
+
+<html>
+  <body class="p-6">
+    <Button color="blue">Hello Flowbite</Button>
+  </body>
+</html>
+
+6. Jalankan proyek
+> npm run dev
+
+
 
 ===== PUDIN SAEPUDIN
